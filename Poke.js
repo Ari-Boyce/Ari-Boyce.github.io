@@ -13,7 +13,9 @@ var matches = 0;
 var tries = 0
 
 document.querySelector("div").addEventListener("click",function(e){
-    if(e.target.src == "http://127.0.0.1:5501/images/pokeball.png"){
+    //if(e.target.src == "http://127.0.0.1:5501/images/pokeball.png"){
+        if(e.target.src.endsWith ("/images/pokeball.png")){
+
         
         //console.log(e.target.attributes["data-src"])
         //console.log(e.target.attributes.src)
@@ -57,6 +59,16 @@ document.querySelector("div").addEventListener("click",function(e){
                     console.log("You WIN!!")
                     if(tries == 14){
                         document.querySelector("h1").textContent = ("PERFECT!!! You are the luckiest person alive!!!")
+                    }else if(tries > 14 && tries <= 25){
+                        document.querySelector("h1").textContent = ("Amazing!!! You're a Pro! ")
+                    }else if(tries > 25 && tries <= 30){
+                        document.querySelector("h1").textContent = ("Great Job!!!")
+                    }else if(tries > 30 && tries <= 35){
+                        document.querySelector("h1").textContent = ("You're ok...")
+                    }else if(tries > 35 && tries <= 40){
+                        document.querySelector("h1").textContent = ("You need to practice")
+                    }else if(tries >= 40 ){
+                        document.querySelector("h1").textContent = ("You're HOT Garbage!!! Did you even TRY?!?!")
                     }
                 }
                 
